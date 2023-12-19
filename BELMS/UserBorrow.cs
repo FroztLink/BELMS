@@ -207,7 +207,7 @@ namespace BELMS
             MySqlCommand sql = new MySqlCommand("INSERT INTO `active_books` (`book_id`, `user_id`, `borrow_date`, `return_date`) VALUES ('"+index+"','"+Program.userID+"','"+currentDate+"','"+returnDate+"')",connection);
             sql.ExecuteNonQuery();
 
-            MessageBox.Show("Yun wala naaaa");
+            MessageBox.Show("Please show the book to the Librarian.");
             Reload();
         }
     }

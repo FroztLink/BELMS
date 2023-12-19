@@ -40,10 +40,16 @@
             // 
             this.gridBookSearch.AllowUserToAddRows = false;
             this.gridBookSearch.AllowUserToDeleteRows = false;
+            this.gridBookSearch.AllowUserToResizeColumns = false;
+            this.gridBookSearch.AllowUserToResizeRows = false;
+            this.gridBookSearch.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.gridBookSearch.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridBookSearch.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.gridBookSearch.Location = new System.Drawing.Point(12, 106);
             this.gridBookSearch.Name = "gridBookSearch";
             this.gridBookSearch.ReadOnly = true;
+            this.gridBookSearch.RowHeadersVisible = false;
+            this.gridBookSearch.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gridBookSearch.Size = new System.Drawing.Size(926, 537);
             this.gridBookSearch.TabIndex = 0;
             // 

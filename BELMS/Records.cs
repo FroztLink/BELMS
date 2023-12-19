@@ -59,7 +59,7 @@ namespace BELMS
             MySqlCommand sql = new MySqlCommand("DELETE FROM active_books WHERE active_id = " + index, connection);
             sql.ExecuteNonQuery();
 
-            MessageBox.Show("Yun naibalik na!");
+            MessageBox.Show("The book has been returned.");
             Reload();
         }
     }

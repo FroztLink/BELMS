@@ -86,14 +86,33 @@ namespace BELMS
             }
         }
 
+        private DataGridViewRow selectedRow;
+
         private void btnUpdate_Click(object sender, EventArgs e)
         {
+            if (gridBookSearch.SelectedRows.Count > 0)
+            {
+                selectedRow = gridBookSearch.SelectedRows[0];
 
-        }
+                txtAccNo.Text = selectedRow.Cells["Accession No."].Value.ToString();
+                txtTitle.Text = selectedRow.Cells["Title"].Value.ToString();
+                txtAuthor.Text = selectedRow.Cells["Author"].Value.ToString();
+                txtEdition.Text = selectedRow.Cells["Edition"].Value.ToString();
+                txtCopyright.Text = selectedRow.Cells["Copyright"].Value.ToString();
+                comboSection.SelectedItem = selectedRow.Cells["Section"].Value.ToString();
+                comboCategory.SelectedItem = selectedRow.Cells["Category"].Value.ToString();
 
-        private void btnDisable_Click(object sender, EventArgs e)
-        {
+                txtAccNo.Enabled = false;
+            }
+            else
+            {
+                MessageBox.Show("Please select a row to edit.");
+            }
 
+            btnAdd.Enabled = false;
+            btnClear.Enabled = false;
+            btnSave.Enabled = true;
+            btnUpdate.Enabled = false;
         }
 
         private void btnClear_Click(object sender, EventArgs e)
@@ -109,7 +128,54 @@ namespace BELMS
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            if (selectedRow != null)
+            {
+                try
+                {
+                    var accno = txtAccNo.Text;
+                    var title = txtTitle.Text;
+                    var author = txtAuthor.Text;
+                    var edition = txtEdition.Text;
+                    var copyright = txtCopyright.Text;
+                    var section = comboSection.SelectedItem;
 
+                    var categorySelectedItem = comboCategory.SelectedItem?.ToString();
+                    var category = (categorySelectedItem != null) ? categorySelectedItem.Split('(')[0].Trim() : null;
+
+                    MySqlCommand command = new MySqlCommand(
+                        "UPDATE books SET " +
+                        "Title = '" + title + "', " +
+                        "Author = '" + author + "', " +
+                        "Edition = '" + edition + "', " +
+                        "Copyright = '" + copyright + "', " +
+                        "Category = '" + category + "', " +
+                        "Section = '" + section + "' " +
+                        "WHERE `Accession No.` = '" + accno + "'", connection);
+
+                    command.ExecuteNonQuery();
+                    Reload();
+
+                    MessageBox.Show("Book updated successfully!");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error updating book: " + ex.Message);
+                }
+                finally
+                {
+                    btnClear.Enabled = true;
+                    selectedRow = null;
+                    txtAccNo.Enabled = true;
+                    btnClear.PerformClick();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please select a row to edit.");
+            }
+            btnAdd.Enabled = true;
+            btnSave.Enabled = false;
+            btnUpdate.Enabled = true;
         }
 
         private void comboSection_SelectedIndexChanged(object sender, EventArgs e)

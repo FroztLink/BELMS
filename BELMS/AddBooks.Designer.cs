@@ -35,7 +35,6 @@
             this.comboCategory = new System.Windows.Forms.ComboBox();
             this.comboSection = new System.Windows.Forms.ComboBox();
             this.btnSave = new System.Windows.Forms.Button();
-            this.btnDisable = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.btnClear = new System.Windows.Forms.Button();
@@ -82,7 +81,6 @@
             this.panelMain.Controls.Add(this.comboCategory);
             this.panelMain.Controls.Add(this.comboSection);
             this.panelMain.Controls.Add(this.btnSave);
-            this.panelMain.Controls.Add(this.btnDisable);
             this.panelMain.Controls.Add(this.btnUpdate);
             this.panelMain.Controls.Add(this.label8);
             this.panelMain.Controls.Add(this.btnClear);
@@ -106,9 +104,14 @@
             // 
             // gridBookSearch
             // 
+            this.gridBookSearch.AllowUserToAddRows = false;
+            this.gridBookSearch.AllowUserToDeleteRows = false;
             this.gridBookSearch.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridBookSearch.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.gridBookSearch.Location = new System.Drawing.Point(455, 34);
             this.gridBookSearch.Name = "gridBookSearch";
+            this.gridBookSearch.RowHeadersVisible = false;
+            this.gridBookSearch.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.gridBookSearch.Size = new System.Drawing.Size(483, 481);
             this.gridBookSearch.TabIndex = 18;
             // 
@@ -145,27 +148,13 @@
             this.btnSave.FlatAppearance.BorderSize = 0;
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSave.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.Location = new System.Drawing.Point(543, 543);
+            this.btnSave.Location = new System.Drawing.Point(735, 541);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(88, 41);
+            this.btnSave.Size = new System.Drawing.Size(100, 41);
             this.btnSave.TabIndex = 16;
             this.btnSave.Text = "SAVE";
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
-            // btnDisable
-            // 
-            this.btnDisable.BackColor = System.Drawing.Color.PaleGreen;
-            this.btnDisable.FlatAppearance.BorderSize = 0;
-            this.btnDisable.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDisable.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDisable.Location = new System.Drawing.Point(770, 543);
-            this.btnDisable.Name = "btnDisable";
-            this.btnDisable.Size = new System.Drawing.Size(88, 41);
-            this.btnDisable.TabIndex = 16;
-            this.btnDisable.Text = "DISABLE";
-            this.btnDisable.UseVisualStyleBackColor = false;
-            this.btnDisable.Click += new System.EventHandler(this.btnDisable_Click);
             // 
             // btnUpdate
             // 
@@ -173,9 +162,9 @@
             this.btnUpdate.FlatAppearance.BorderSize = 0;
             this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdate.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdate.Location = new System.Drawing.Point(658, 543);
+            this.btnUpdate.Location = new System.Drawing.Point(571, 541);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(88, 41);
+            this.btnUpdate.Size = new System.Drawing.Size(100, 41);
             this.btnUpdate.TabIndex = 16;
             this.btnUpdate.Text = "UPDATE";
             this.btnUpdate.UseVisualStyleBackColor = false;
@@ -357,7 +346,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.DataGridView gridBookSearch;
-        private System.Windows.Forms.Button btnDisable;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.ComboBox comboSection;

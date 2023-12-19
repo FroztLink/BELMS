@@ -99,8 +99,11 @@
             // 
             this.gridBookSearch.AllowUserToAddRows = false;
             this.gridBookSearch.AllowUserToDeleteRows = false;
+            this.gridBookSearch.AllowUserToResizeColumns = false;
+            this.gridBookSearch.AllowUserToResizeRows = false;
             this.gridBookSearch.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.gridBookSearch.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridBookSearch.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.gridBookSearch.Location = new System.Drawing.Point(12, 87);
             this.gridBookSearch.Name = "gridBookSearch";
             this.gridBookSearch.ReadOnly = true;

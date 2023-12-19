@@ -54,9 +54,10 @@ namespace BELMS
                         if (username.ToLower() == "admin")
                         {
                             Program.userID = result2.ToString();
-                            MessageBox.Show("Login Successfully! :D");
+                            MessageBox.Show("Welcome, Librarian!");
                             formLibrarianDashboard pupuntaDun = new formLibrarianDashboard();
                             pupuntaDun.Show();
+                            this.Hide();
                         }
                         else
                         {
@@ -65,7 +66,7 @@ namespace BELMS
                             string stat = sql.ExecuteScalar().ToString();
                             if(stat == "Active")
                             {
-                                MessageBox.Show("Login Successfully! :D");
+                                MessageBox.Show("Welcome, User!");
                                 formUserDashboard pupuntaDun = new formUserDashboard();
                                 pupuntaDun.Show();
                                 this.Hide();
@@ -79,8 +80,12 @@ namespace BELMS
                     }
                     else
                     {
-                        MessageBox.Show("User not Found!");
+                        MessageBox.Show("Wrong Password!");
                     }
+                }
+                else
+                {
+                    MessageBox.Show("User not found!");
                 }
             }
             catch (Exception ex)
@@ -92,6 +97,15 @@ namespace BELMS
         private void btnExit_Click(object sender, EventArgs e)
         {
             Environment.Exit(1);
+        }
+
+        private void PressEnter(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnLogin.PerformClick();
+                e.SuppressKeyPress = true;
+            }
         }
     }
 }

@@ -35,8 +35,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.txtUsername = new System.Windows.Forms.TextBox();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.picboxDivine = new System.Windows.Forms.PictureBox();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picboxDivine)).BeginInit();
             this.SuspendLayout();
@@ -110,9 +110,11 @@
             this.txtPassword.Location = new System.Drawing.Point(266, 220);
             this.txtPassword.Multiline = true;
             this.txtPassword.Name = "txtPassword";
+            this.txtPassword.PasswordChar = '•';
             this.txtPassword.Size = new System.Drawing.Size(180, 30);
             this.txtPassword.TabIndex = 2;
             this.txtPassword.TextChanged += new System.EventHandler(this.txtPassword_TextChanged);
+            this.txtPassword.KeyDown += new System.Windows.Forms.KeyEventHandler(this.PressEnter);
             // 
             // txtUsername
             // 
@@ -124,15 +126,6 @@
             this.txtUsername.TabIndex = 1;
             this.txtUsername.TextChanged += new System.EventHandler(this.txtUsername_TextChanged);
             // 
-            // panel2
-            // 
-            this.panel2.BackgroundImage = global::BELMS.Properties.Resources.login1;
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(88, 450);
-            this.panel2.TabIndex = 0;
-            // 
             // picboxDivine
             // 
             this.picboxDivine.Image = global::BELMS.Properties.Resources.divine_logo_copy1;
@@ -142,6 +135,15 @@
             this.picboxDivine.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picboxDivine.TabIndex = 5;
             this.picboxDivine.TabStop = false;
+            // 
+            // panel2
+            // 
+            this.panel2.BackgroundImage = global::BELMS.Properties.Resources.login1;
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(88, 450);
+            this.panel2.TabIndex = 0;
             // 
             // formLogin
             // 
