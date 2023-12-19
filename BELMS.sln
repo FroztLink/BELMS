@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34330.188
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BELMS", "BELMS\BELMS.csproj", "{A3609B82-414E-44E9-9AFF-7B31B06CDBEA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A3609B82-414E-44E9-9AFF-7B31B06CDBEA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3609B82-414E-44E9-9AFF-7B31B06CDBEA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3609B82-414E-44E9-9AFF-7B31B06CDBEA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3609B82-414E-44E9-9AFF-7B31B06CDBEA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {52E1D558-D685-4706-B2DE-386F9F36DB5F}
+	EndGlobalSection
+EndGlobal
