@@ -62,7 +62,7 @@ namespace BELMS
             {
                 MySqlCommand sqlCommand = new MySqlCommand("UPDATE `users` SET `status` = 'Active' WHERE user_ID = " + user_ID, connection);
                 sqlCommand.ExecuteNonQuery();
-                MessageBox.Show("Done");
+                MessageBox.Show("Done!");
             }
             else
             {
